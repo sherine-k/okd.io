@@ -4,7 +4,7 @@ If you wish to contribute to this repository please follow the guidelines below.
 
 ## Forking this repository
 
-The first thing you need to do is to [fork this repository](https://github.com/openshift-cs/okd.io#fork-destination-box) into your own GitHub account.
+The first thing you need to do is to [fork this repository](https://github.com/okd-project/okd.io#fork-destination-box) into your own GitHub account.
 
 Then, clone it into your local machine:
 
@@ -39,4 +39,4 @@ $ git commit
 $ git push origin my-feature-branch
 ```
 
-Finally, submit a [submit a Pull Request](https://github.com/openshift-cs/okd.io/compare)
+Finally, submit a [submit a Pull Request](https://github.com/okd-project/okd.io/compare)
