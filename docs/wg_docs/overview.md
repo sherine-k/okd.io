@@ -17,6 +17,6 @@ The process for making changes to the documentation is outlined in the [document
 
 ## Community Documentation
 
-This site is the community documentation.  It is hosted on [github](https://github.com/openshift-cs/okd.io/){: target=_blank} and uses a static site generator to convert the Markdown documents in the git repo into this website.
+This site is the community documentation.  It is hosted on [github](https://github.com/okd-project/okd.io/){: target=_blank} and uses a static site generator to convert the Markdown documents in the git repo into this website.
 
 Details of how to modify the site content is contained on the page [Modifying OKD.io](okd-io.md).

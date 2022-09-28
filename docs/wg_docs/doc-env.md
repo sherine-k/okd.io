@@ -237,7 +237,7 @@ You can create the environment by :
 
     - Install [Python 3](https://www.python.org){: target=_blank} on your system
     - Install [Node.js](https://nodejs.org/en/){: target=_blank} on your system
-    - Clone **your fork** of the [okd.io repository](https://github.com/openshift-cs/okd.io/){: target=_blank}
+    - Clone **your fork** of the [okd.io repository](https://github.com/okd-project/okd.io/){: target=_blank}
     - cd into the local repo directory (./okd.io)
     - Install the required python packages `pip install -r requirements.txt'
     - Install the spell checker using command `npm ci`.  If you want to use the cspell command on the command line, then you need to install it globally `npm -g i cspell`

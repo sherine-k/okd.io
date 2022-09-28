@@ -1,6 +1,6 @@
 # Contributing to okd.io
 
-The source for **okd.io** is in a [github repository](https://github.com/openshift-cs/okd.io/){: target=_blank}.
+The source for **okd.io** is in a [github repository](https://github.com/okd-project/okd.io/){: target=_blank}.
 
 The site is created using [MkDocs](https://www.mkdocs.org){: target=_blank}. which takes Markdown documents and turns them into a static website that can be accessed from a filesystem or served from a web server.
 

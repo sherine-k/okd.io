@@ -4,7 +4,7 @@ site_description: >-
 site_url: https://openshift-cs.github.io/okd.io/index.html
 site_author: Brian Innes
 repo_name: "okd-io"
-repo_url: https://github.com/openshift-cs/okd.io
+repo_url: https://github.com/okd-project/okd.io
 docs_dir: docs
 site_dir: public
 edit_uri: edit/main/docs
