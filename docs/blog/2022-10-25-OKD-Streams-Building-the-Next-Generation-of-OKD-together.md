@@ -54,7 +54,7 @@ Help drive faster innovation into OCP, OKD, Kubernetes and RHEL along with the m
 -   Review our [Tekton OKD Build pipelines](https://github.com/okd-project/okd-coreos-pipeline){target=_blank}. Try running them on your own Kubernetes cluster with Tekton - help us make our pipelines more efficient and easier to re-use.
 -   Review our [pipeline documentation](https://github.com/okd-project/okd-coreos-pipeline/blob/main/README.md){target=_blank} and help us make it better.
 -   Fork our pipelines and add your own tasks and resources and let us know how it goes.
--   Come to an OKD Working Group meeting and share your OKD use cases with the rest of the community. We’ll help you connect with like minded collaborators!
+-   Come to an [OKD Working Group meeting](https://calendar.fedoraproject.org/list/okd/){target=_blank} and share your OKD use cases with the rest of the community. We’ll help you connect with like minded collaborators!
 
 This project is a game changer for lots of open source communities internally and externally. We know there are folks out there in the OKD working group and in the periphery that haven't spoken up and we'd love to hear from you, especially if you are currently doing bespoke OKD builds. Will this unblock your innovation the way we think it will?
 
