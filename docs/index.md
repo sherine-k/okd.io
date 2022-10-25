@@ -6,7 +6,7 @@ title: OKD.io
 <!--- cSpell:ignore roadmap -->
 
 !!! Info "Latest"
-    **OKD at KubeCon + CloudNativeCon North America 2022** - [see blog for details](blog/2022-10-20-OKD-at-Kubecon-NA-Detroit.md)
+    **Announcing OKD Streams: Building the Next Generation of OKD together** - [see blog for details](blog/2022-10-25-OKD-Streams-Building-the-Next-Generation-of-OKD-together.md)
 
 Built around a core of OCI container packaging and Kubernetes container cluster management, OKD is also augmented by application lifecycle management functionality and DevOps tooling. OKD provides a complete open source container application platform.
 
