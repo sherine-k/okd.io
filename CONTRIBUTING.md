@@ -15,7 +15,7 @@ $ git clone git@github.com:your-username/okd.io
 And add the `upstream` remote to follow this repository's changes:
 
 ```bash
-$ git remote add upstream git@github.com:openshift-cs/okd.io
+$ git remote add upstream git@github.com:okd-project/okd.io
 $ git fetch upstream
 $ git rebase upstream/main
 ```
