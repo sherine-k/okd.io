@@ -20,7 +20,7 @@ $ crc config view
 - preset                                : okd
 ```
 
-If you encounter any problems, please open a discussion item in the [OKD GitHub Community](https://github.com/openshift/okd/discussions){: target=_blank}!
+If you encounter any problems, please open a discussion item in the [OKD GitHub Community](https://github.com/okd-project/okd/discussions){: target=_blank}!
 
 ## CRC Working group
 

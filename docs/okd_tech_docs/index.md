@@ -20,13 +20,13 @@ In addition to the above this section will also look at the Red Hat build and te
 
 ## OKD Releases
 
-OKD is a Kubernetes based platform that delivers a fully managed platform from the core operating system to the Kubernetes platform and the services running on it.  All aspects of OKD are managed by a collection of operators.  
+OKD is a Kubernetes based platform that delivers a fully managed platform from the core operating system to the Kubernetes platform and the services running on it.  All aspects of OKD are managed by a collection of operators.
 
 OKD shares most of the same source code as Red Hat OpenShift.  One of the primary differences is that OKD uses [Fedora CoreOS](https://getfedora.org/en/coreos?stream=stable){target=_blank} where OpenShift uses Red Hat Enterprise Linux CoreOS as the base platform for cluster nodes.
 
 An OKD release is a strictly defined set of software.  A release is defined by a **release payload**, which contains an operator (Cluster Version Operator), a list of manifests to apply and a reference file.  You can get information about a release using the **oc** command line utility, `oc adm release info <release name>`.
 
-You can find the latest available release [here](https://github.com/openshift/okd/releases){target=_blank}.
+You can find the latest available release [here](https://github.com/okd-project/okd/releases){target=_blank}.
 
 You can get the current version of your cluster using the `oc get clusterversion` command, or from the Cluster Settings page in the Administration section of the OKD web console.
 

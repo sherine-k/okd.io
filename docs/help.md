@@ -4,7 +4,7 @@ There is no official product support for OKD as it is a community project. All a
 
 ## How to ask for help
 
-For questions or feedback, start a discussion on the [discussion forum](https://github.com/openshift/okd/discussions){: target=_blank} or reach us on [Kubernetes Slack on #openshift-users](https://kubernetes.slack.com/)
+For questions or feedback, start a discussion on the [discussion forum](https://github.com/okd-project/okd/discussions){: target=_blank} or reach us on [Kubernetes Slack on #openshift-users](https://kubernetes.slack.com/)
 
 ## Community Etiquette
 
@@ -26,4 +26,4 @@ Please do not tag people you see answering other questions to try to get a faste
 
 ## Raising bugs
 
-We are trying to do all the diagnostic work in the discussion forum rather than using issues for the OKD project.  If you are certain you have discovered a bug, then please raise an [issue](https://github.com/openshift/okd/issues){: target=_blank}, but if you are not sure if you have found a bug then use the discussion forum to discuss it.  If it turns out to be a bug, then the discussion topic can be converted to an issue.
+We are trying to do all the diagnostic work in the discussion forum rather than using issues for the OKD project.  If you are certain you have discovered a bug, then please raise an [issue](https://github.com/okd-project/okd/issues){: target=_blank}, but if you are not sure if you have found a bug then use the discussion forum to discuss it.  If it turns out to be a bug, then the discussion topic can be converted to an issue.
