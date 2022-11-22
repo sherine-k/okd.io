@@ -25,4 +25,4 @@ The OKD group meets virtually every other week.
 You don't need an invitation to join a working group, simple join the video call, by following the link in the calendar entry,  You may also want to join online discussions as set out in the [contributor section](contributor.md)
 
 !!! Note
-  The community uses zoom for meetings.  Details of how to join the call and the password for the meeting can be found [here](https://github.com/okd-project/working-group/blob/main/meetings.md){target=_blank}
+    The community uses zoom for meetings.  Details of how to join the call and the password for the meeting can be found [here](https://github.com/okd-project/working-group/blob/main/meetings.md){target=_blank}
