@@ -37,7 +37,6 @@ If you create an issue, please do the following:
 - If you have the appropriate permissions, assign the issue to Michael Burke (mburke5678) and Diane Mueller (dmueller2001) so that the issue gets our direct attention.  You can assign an issue by including the following in the issue description:
     ```text
     /assign @mburke5678
-    /assign @dmueller2001
     ```
     If not, you can @ mention mburke5678 in a comment.
 - If you have the permissions, add a `kind/documentation` label.
