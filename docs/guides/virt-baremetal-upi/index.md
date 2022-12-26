@@ -94,7 +94,7 @@ echo '(allow rpcbind_t unreserved_port_t (udp_socket (name_bind)))' >local_rpcbi
 semodule -i local_rpcbind.cil
 ```
 
-* master nodes are failing the first boot with access denied to `[::1]:53` <https://github.com/openshift/okd/issues/897>
+* master nodes are failing the first boot with access denied to `[::1]:53` <https://github.com/okd-project/okd/issues/897>
 
 While the master node is booting edit the grub config adding to kernel command line `console=null`.
 
