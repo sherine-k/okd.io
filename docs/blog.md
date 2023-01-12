@@ -8,13 +8,19 @@ You are also invited to participate: share your experiences and tips with the co
 
 ## Blogs
 
+### 2022
+
+|Date        | Title |
+|------------|-------|
+| 2022-12-12 | [Building the OKD payload](blog/2022-12-12-Building-OKD-payload.md) |
+| 2022-10-25 | [OKD Streams: Building the Next Generation of OKD together](blog/2022-10-25-OKD-Streams-Building-the-Next-Generation-of-OKD-together.md) |
+| 2022-10-20 | [OKD at KubeCon + CloudNativeCon North America 2022](blog/2022-10-20-OKD-at-Kubecon-NA-Detroit.md) |
+| 2022-09-09 | [An Introduction to Debugging OKD Release Artifacts](blog/2022-09-09-an-introduction-to-debugging-okd-release-artifacts.html.md) |
+
 ### 2021
 
 |Date        | Title |
 |------------|-------|
-| 2022-10-25 | [OKD Streams: Building the Next Generation of OKD together](blog/2022-10-25-OKD-Streams-Building-the-Next-Generation-of-OKD-together.md) |
-| 2022-10-20 | [OKD at KubeCon + CloudNativeCon North America 2022](blog/2022-10-20-OKD-at-Kubecon-NA-Detroit.md) |
-| 2022-09-09 | [An Introduction to Debugging OKD Release Artifacts](blog/2022-09-09-an-introduction-to-debugging-okd-release-artifacts.html.md) |
 | 2021-05-06 | [OKD Working Group Office Hours at KubeconEU on OpenShift.tv](blog/2021-05-06-OKD-Office-Hours-at-KubeconEU-on-OpenShiftTV.html.md) |
 | 2021-05-04 | [Rohde & Schwarz's Journey to OpenShift 4 From OKD to Azure Red Hat OpenShift](blog/2021-05-04-From-OKD-to-OpenShift-in-3-Years.html.md) |
 | 2021-03-22 | [Recap OKD Testing and Deployment Workshop - Videos and Additional Resources](blog/2021-03-22-recap-okd-testing-deployment-workshop.html.md) |
