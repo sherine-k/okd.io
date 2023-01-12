@@ -81,6 +81,10 @@ For such an image, the build is pretty straight forward. When a PR is filed for 
 Next, the [OCP release controller](https://github.com/openshift/release/blob/master/core-services/release-controller/_releases/release-ocp-4.13-ci.json#L12) which runs at every change to the ImageStream, will mirror all images from the `${MAJOR}.${MINOR}` ImageStream to the `scos-${MAJOR}.${MINOR}` ImageStream.
 
 
+<!-- 
+Replacing mermaid diagrams with rendered image until style colouring is fixed
+https://github.com/okd-project/okd.io/issues/18
+
 ```mermaid
 graph TD;
     PR[fa:fa-github PullRequest]-- submitted -->PreSub{{fa:fa-ship PreSubmitJob}};
@@ -93,7 +97,10 @@ graph TD;
     RCtrl{{fa:fa-ship ReleaseController}}-- mirrors -->isokd[(OKD IS scos-4.x)];
     RCtrl -. from .- isci
 
-```
+``` 
+-->
+
+![release process](img/build_okd_payload_1.png)
 
 As mentioned before, some of the images are not mirrored, and that brings us to the next section, on building those images that have content (whether code or manifests) specific to OKD.
 
@@ -103,7 +110,7 @@ As mentioned before, some of the images are not mirrored, and that brings us to 
 For the OKD-specific images, the CI process is a bit different, as the image is built in the PostSubmit job and then directly promoted to the `okd-scos` IS, without going through the OCP CI to OKD mirroring step. 
 This is called [a variant configuration](https://docs.ci.openshift.org/docs/how-tos/contributing-openshift-release/#variants). You can see this for [MachineConfigOperator](https://github.com/openshift/release/blob/master/ci-operator/config/openshift/machine-config-operator/openshift-machine-config-operator-master__okd-scos.yaml) for example.  
 
-
+<!--
 ```mermaid
 graph TD;
     PR[fa:fa-github PullRequest]-- submitted -->PreSubRHCOS{{fa:fa-gears fa:fa-prow PreSubmitJob / OCP CI}};
@@ -127,6 +134,9 @@ graph TD;
      classDef RHCOS fill:;
      classDef SCOS fill:#1e97fa;
 ```
+-->
+
+![trigger for building](img/build_okd_payload_2.png)
 
 The built images land directly in the `scos-${MAJOR}-${MINOR}` ImageStream. 
 
@@ -167,6 +177,7 @@ The pipeline is fairly simple. Take the [build-from-scratch.yaml](https://github
 * Build payload images in batches (starting with the ones that don't have any dependencies)
 * Finally, as all OKD payload component images are in the image stream, the OKD release image is in turn built, using the `oc adm release new` command.
 
+<!--
 ```mermaid
 graph TB
     subgraph pipeline
@@ -201,6 +212,9 @@ graph TB
     end
 
 ```
+-->
+
+![pipeline](img/build_okd_payload_3.png)
 
 ### Triggers
 
