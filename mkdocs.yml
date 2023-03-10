@@ -95,6 +95,7 @@ nav:
   - OKD Working Group:
       - About: working-groups.md
       - Charter: charter.md
+      - Communications: communications.md
       - Minutes: working-group/minutes/minutes.md
       - Subgroups:
           - Documentation:
