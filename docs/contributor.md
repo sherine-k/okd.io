@@ -2,7 +2,7 @@
 
 <!--- cSpell:ignore virt -->
 
-OKD is built from many different open source projects - Fedora CoreOS, the CentOS and UBI RPM ecosystems, cri-o, Kubernetes, and many different extensions to Kubernetes. The `openshift` organization on GitHub holds active development of components on top of Kubernetes and references projects built elsewhere. Generally, you'll want to find the component that interests you and review their README.md for the processes for contributing.
+OKD is built from many different open source projects - Fedora CoreOS, the CentOS Stream and UBI RPM ecosystems, cri-o, Kubernetes, and many different extensions to Kubernetes. The `openshift` organization on GitHub holds active development of components on top of Kubernetes and references projects built elsewhere. Generally, you'll want to find the component that interests you and review their README.md for the processes for contributing.
 
 Community process and questions can be raised in our [community repo](https://github.com/openshift/community) and issues [opened in this repository](https://github.com/okd-project/okd/issues) (Bugzilla locations coming soon).
 
@@ -15,7 +15,7 @@ All contributions are welcome - OKD uses the Apache 2 license and does not requi
 The easiest way to get involved in the community is to:
 
 - watch [replays of previous working group meetings](https://www.youtube.com/playlist?list=PLaR6Rq6Z4Iqc3WjZB-rUTPru8RKyOCnBo){: target=_blank}
-- attend [one of the working group meetings](https://calendar.fedoraproject.org/list/okd/){: target=_blank} (no invite needed, just use the link in the calendar to join the BlueJeans video conference).
+- attend [one of the working group meetings](https://calendar.fedoraproject.org/list/okd/){: target=_blank} (no invite needed, just use the link in the calendar to join the Zoom video conference).
 - join the [OKD Working Group Google Group](https://groups.google.com/g/okd-wg){: target=_blank}
 - join the [#openshift-dev channel on Slack](https://kubernetes.slack.com/messages/openshift-dev/){: target=_blank}
 
