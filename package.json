@@ -1,6 +1,6 @@
 {
     "name": "okd-io",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "",
     "main": "index.js",
     "directories": {
@@ -25,6 +25,6 @@
     "author": "Brian Innes",
     "license": "ISC",
     "devDependencies": {
-        "cspell": "^5.20.0"
+        "cspell": "^6.31.1"
     }
 }

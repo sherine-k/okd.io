@@ -1,5 +1,7 @@
 # Building the OKD payload
 
+<!--- cSpell:ignore SCOS buildconfigs buildconfig Kustomize kustomization baremetal -->
+
 Over the last couple of months, we've been busy building a new OKD release on [CentOS Stream](https://www.centos.org/centos-stream/) [CoreOS](https://en.wikipedia.org/wiki/Container_Linux) (SCOS), and were able to present it for the [OpenShift Commons Detroit 2022](https://www.okd.io/blog/2022-10-20-OKD-at-Kubecon-NA-Detroit/).  
 
 While some of us created a Tekton pipeline that could [build SCOS](https://www.youtube.com/watch?v=HcGsvSms--A&list=PLaR6Rq6Z4Iqck7Z0ekuJdsMU1fE6hkd6d&index=2) on a Kind cluster, others were tediously building the OKD payload with Prow, but also creating a [Tekton](https://tekton.dev/) pipeline for building that payload on any OpenShift or OKD cluster.
@@ -45,13 +47,11 @@ oc adm release info quay.io/okd/scos-release:4.12.0-0.okd-scos-2022-12-02-083740
 
 Now that we've established what needs to be built, let's take a deeper look at how the OKD on SCOS payload is built.
 
-
-## Building OKD/SCOS the Prow way :railway_track: 
+## Building OKD/SCOS the Prow way `:railway_track:`
 
 The obvious way to build OKD on SCOS is to use [Prow](https://docs.prow.k8s.io/docs/) - THE Kubernetes-based CI/CD system, which is what builds OCP and OKD on FCOS already today. This is what Kubernetes uses upstream as well. :shrug:
 
 For a new OKD release to land in the [releases](https://origin-release.ci.openshift.org) page, there's a whole bunch of Prow jobs that run. Hang on! It's a long story...
-
 
 ### ImageStreams
 
@@ -61,7 +61,7 @@ For OKD on Fedora CoreOS (OKD/FCOS) it's named `okd`.For OKD/SCOS, this ImageStr
 
 This ImageStream includes all payload images contained in the specific `OKD` release based on CentOS Stream CoreOS (SCOS)  
 
-Among these payload images, we distiguish:
+Among these payload images, we distinguish:
 * Images that can be shared between OCP and OKD. These are built in Prow and mirrored into the `okd-scos` ImageStream.  
 * Images that have to be specifically built for OKD/SCOS, which are directly tagged into the `okd-scos` ImageStream. This is the case for images that are specific to the underlying operating system, or contain RHEL packages. These are: the `installer` images, the `machine-config-operator` image, the `machine-os-content` that includes the base operating system OSTree, as well as the `ironic` image for provisioning bare-metal nodes, and a few other images.
 
@@ -73,8 +73,8 @@ Take the [Cluster Network Operator](https://github.com/openshift/cluster-network
 For this operator, the same image can be used on OCP CI and OKD releases. Most payload images fit into this case.  
 
 For such an image, the build is pretty straight forward. When a PR is filed for a GitHub repository that is part of a release payload:
-* The Presubmit jobs run. It essentially builds the image and stores it in an ImageStream in an ephemeral namespace to run tests against several platforms (AWS, GCP, BareMetal, Azure, etc)
-* Once the tests are green and the PR is approved and merges, the Postsubmit jobs run. It essentially promotes the built image to the appropriate release-specific ImageStream:
+* The Pre-submit jobs run. It essentially builds the image and stores it in an ImageStream in an ephemeral namespace to run tests against several platforms (AWS, GCP, BareMetal, Azure, etc)
+* Once the tests are green and the PR is approved and merges, the Post-submit jobs run. It essentially promotes the built image to the appropriate release-specific ImageStream:
     * if the PR is for master, images are pushed to the `${next-release}` ImageStream
     * If the PR is for `release-${MAJOR}.${MINOR}`, images are pushed to the `${MAJOR}.${MINOR}` ImageStream
 
@@ -82,7 +82,7 @@ Next, the [OCP release controller](https://github.com/openshift/release/blob/mas
 
 
 <!-- 
-Replacing mermaid diagrams with rendered image until style colouring is fixed
+Replacing mermaid diagrams with rendered image until style coloring is fixed
 https://github.com/okd-project/okd.io/issues/18
 
 ```mermaid
@@ -262,7 +262,7 @@ The list of images from a new OCP release (obtained through `oc adm release info
 In the coming weeks and months, you can expect lots of changes, especially as the OKD community is picking up usage of OKD/SCOS, and doing their own Tekton Pipeline runs:
 * Work to automate the OKD release procedure is progress by automatically verifying payload image signatures, signing the release, and tagging it on GitHub.
 
-  The goal is to deliver a new OKD/SCOS on a sprintly (3-weekly) basis, and to provide both the OCP teams and the OKD community with a fresh release to test much earlier than previously with the OCP release cadance.
+  The goal is to deliver a new OKD/SCOS on a sprint (3-weekly) basis, and to provide both the OCP teams and the OKD community with a fresh release to test much earlier than previously with the OCP release cadence.
 * For the moment, OKD/SCOS releases are only verified on AWS. To gain more confidence in our release payloads, we will expand the test matrix to other platforms such as GCP, vSphere and Baremetal
 *  Enable GitOps on the Tekton pipeline repository, so that changes to the pipeline are automatically deployed on [OperateFirst](https://www.operate-first.cloud/) for the community to use the latest and greatest.
 *  The OKD Working Group will be collaborating with the [Mass Open Cloud](https://massopen.cloud/) to allow for deployments of test clusters on their baremetal infrastructure.

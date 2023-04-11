@@ -1,6 +1,6 @@
 # OKD Streams: Building the Next Generation of OKD together
 
-<!--- cSpell:ignore SCOS productized Thorsten Schwesig Humair Coufal Hild Zuccarelli Sherine Khoury Vadim Rutkovsky Alessandro Stefano Magiera Marrich Glombek Gompa -->
+<!--- cSpell:ignore SCOS productized Thorsten Schwesig Humair Coufal Hild Zuccarelli Sherine Khoury Vadim Rutkovsky Alessandro Stefano Magiera Marrich Glombek Gompa massopen Innes -->
 
 *by [Diane Mueller](https://github.com/dmueller2001)*
 
