@@ -1,4 +1,4 @@
-FROM squidfunk/mkdocs-material:8.2.14
+FROM squidfunk/mkdocs-material:9.1.6
 
 RUN apk add --no-cache --update nodejs npm
 
