@@ -37,7 +37,7 @@ and
 !!!Question
     Is there a way to find the correct base image for an OKD release?
 
-The original images are unavailable to the public. There is an effort to update the Dockerfiles with publically available images.
+The original images are unavailable to the public. There is an effort to update the Dockerfiles with publicly available images.
 
 ### Example Scenario
 
@@ -70,7 +70,7 @@ To complete the scenario the following steps need to be performed:
 
     `from_release`, `release_name`, `to_image` will need to be updated as needed  
     
-8. Pull installer for cluster release: `oc adm release extract --tools <to_image from above>`  (Make sure image is publically available)
+8. Pull installer for cluster release: `oc adm release extract --tools <to_image from above>`  (Make sure image is publicly available)
 
     
 !!!Warning

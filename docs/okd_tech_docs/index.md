@@ -1,6 +1,6 @@
 # OKD Technical Documentation
 
-<!--- cSpell:ignore pullspecs -->
+<!--- cSpell:ignore pullspecs clusterversion -->
 
 !!!Warning
     This section is under construction

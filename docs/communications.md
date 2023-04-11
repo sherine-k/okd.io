@@ -1,5 +1,7 @@
 # OKD Working Group Communications
 
+<!--- cSpell:ignore kanban -->
+
 The working group issues regular communications through several different methods.
 There are also a few ways to contact the working group depending on the type of
 communication needed. This page will help you navigate the various communication
