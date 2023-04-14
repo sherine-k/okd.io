@@ -161,7 +161,7 @@ spec:
   restartPolicy: Never
 ```
 
-Modify this configuration as required to add https communication and persistant storage.
+You may want to modify this configuration to add https communication and persistant storage using information in the [Assisted Installer git repo](https://github.com/openshift/assisted-service/tree/master/deploy/podman){: target=_blank}.
 
 ### Run the Assisted Installer
 
@@ -218,12 +218,12 @@ When you have the Assisted Installer running locally you can use it to deploy a 
             Do we need to explain how to create this?
     - leave the rest of the settings as unchecked unless you need to configure a proxy then select the **Generate Discovery ISO** then download the ISO by pressing **Download Discovery ISO**.  Once downloaded you can close the popup dialog, where you should see **waiting for hosts...**
 
-5. You should boot your target OKD host using the downloaded ISO file.  During the install the target system will reboot a couple of times, so it is important that the first boot uses the ISO but subsequent boots will use the system disk.
+5. You should boot your target OKD host using the downloaded ISO file.  During the install the target system will reboot a couple of times, so it is important that the first boot uses the ISO but subsequent boots will use the internal hard disk.
 
     !!!Warning
         All internal storage on the target system will be wiped and used for the cluster
-6. Once the target system has booted from the ISO it will contact the Assisted Installer and appear the host on the Assisted Installer **Host discovery** screen.  When the target system appears and the status moves from **Discovering** to **Ready**  On the you can press the next button
-7. On the **Storage** page you can configure the storage to use on the target system.  If required modify as required then press next
+6. Once the target system has booted from the ISO it will contact the Assisted Installer and then appear on the Assisted Installer **Host discovery** screen.  After the target system appears and the status moves from **Discovering** to **Ready**  On the you can press the next button
+7. On the **Storage** page you can configure the storage to use on the target system.  The default should work, but you may want to modify if your target system contains multiple disks.  Once the storage settings are correct press next
 8. On the **Networking** page you should be able to leave things at the default values.  You may need to wait a short time while the host is initialising ,  When the status changes to **Ready** then press next
 9. On the **Review and create** page you may need to wait for the preflight checks to complete.  When they are ready you can press **Install cluster** to start the cluster install.
 
@@ -231,7 +231,11 @@ You should be able to leave the system to complete.  The target system will rebo
 
 As the cluster is being installed you will be able to download the kubeconfig file for the cluster.  It is important to download this before stopping the Assisted Installer as by default the Assisted Installer storage does not persist across a shutdown.
 
+Once the cluster setup completes you will see the cluster console access details, uncluding the passwork for the kubeadmin password.  Again, you need to capture this information before stopping the Assisted Installer as the information will be lost if you have not enabled persistence.
+
 ## Issues to be resolved
+
+Currently the generated clusters are not installed correctly, so some work needs to be done to correct the setup instructions or find issues with the Assisted Installer or OKD relese files.
 
 ### SCOS issue
 
