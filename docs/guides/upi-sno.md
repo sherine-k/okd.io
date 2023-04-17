@@ -9,7 +9,7 @@ This document outlines how to deploy a single node (the real hard way) using UPI
 User provisioned infrastructure **(UPI)** of OKD 4.x Single Node cluster on bare metal or virtual machines
 
 **N.B.** Installer provisioned infrastructure **(IPI)** - this is the preferred method as it is much simpler,  
-it automatically provisions and maintains the install for you, however it  is target towards cloud and onprem   
+it automatically provisions and maintains the install for you, however it is targeted towards cloud and onprem services  
 i.e aws, gcp, azure, also for openstack, IBM, and vSphere. 
 
 If your install falls in these supported options then use IPI, if not this means that you will more than likely have to fallback on the UPI install method.
@@ -34,13 +34,15 @@ we will use 2 vm’s (one for bootstrap and one for the master/worker node) with
 
 ## Architecture (this refers to a full high availability cluster)
 
-The diagram below shows a full install for high availability scalable solution.
+The diagram below shows an install for high availability scalable solution.
 For our single node install we only need a **bootstrap** node and a **master/worker** node (2 bare metal servers or 2 vm’s)
 
 ![pic](./img/OKD-UPI-Install.jpg){width=100%}
 
 
 ## Software
+
+For the UPI SNO I made use of FHCOS (Fedora CoreOS)
 
 FHCOS
 
@@ -66,10 +68,10 @@ The following is a manual process of installing and configuring the infrastructu
 
 ### Provision VM’s (Optional) - Skip this step if you using bare metal servers
 
-The use of VM’s is optional , each node could be a bare metal server.
+The use of VM’s is optional, each node could be a bare metal server.
 As I did not have several servers at my disposal I used a NUC (ryzen9 with 32G of RAM) and created 2 VM’s (bootstrap and master/worker)
 
-I used cockpit (fedora)  to validate the network and vm setup (from the scripts). Use the virtualization software that you prefer.
+I used cockpit (fedora) to validate the network and vm setup (from the scripts). Use the virtualization software that you prefer.
 For the okd-svc machine I used the bare metal server and installed fedora 37 (this hosted my 2 VM's)
 
 The bootstrap server can be shutdown once the master/worker has been fully setup
@@ -413,7 +415,7 @@ chown -R nobody:nobody /shares/registry
 chmod -R 777 /shares/registry
 ```
 
-Export the Share - this allows any service in the 192.168.122.xxx range to access NFS
+Export the share, this allows any service in the 192.168.122.xxx range to access NFS
 
 ```
 echo "/shares/registry  192.168.122.0/24(rw,sync,root_squash,no_subtree_check,no_wdelay)" > /etc/exports
@@ -488,7 +490,7 @@ Generate Kubernetes manifest files
 
 A warning is shown about making the control plane nodes schedulable. 
 
-For the SNO its mandatory to run workloads on the `Control Plane` nodes. 
+For the SNO it's mandatory to run workloads on the `Control Plane` nodes. 
 
 If you don't want to you (incase you move to the full HA install)  you can disable this with:
 
@@ -504,7 +506,7 @@ Generate the Ignition config and Kubernetes auth files
 ~/openshift-install create ignition-configs --dir ~/okd-install
 ```
 
-Create a hosting directory to serve the configuration files for the OpenShift booting process
+Create a hosting directory to serve the configuration files for the OKD booting process
 
 ```bash
 mkdir /var/www/html/okd4
@@ -536,7 +538,7 @@ Confirm you can see all files added to the `/var/www/html/ocp4/`  through Apache
 curl localhost:8080/okd4/
 ```
 
-Start VMS
+Start VMS/Bare metal servers
 
 Execute for each VM type the appropriate coreos-installer command
 
@@ -559,13 +561,13 @@ Worker Node
 --ignition-url https://192.168.122.1:8080/okd4/worker.ign
 ```
 
-A typical cli for coreos (using master.ign would look like this)
+A typical cli for CoreOS (using master.ign would look like this)
 
 ```bash
 $ sudo coreos-installer install /dev/sda --ignition-url http://192.168.122.1:8080/okd4/master.ign  --image-url http://192.168.122.1:8080/okd4/fhcos  --insecure-ignition -–insecure 
 ```
 
-**NB** Note if using fedora coreos the device would need to change i.e /dev/vda
+**NB** Note if using Fedora CoreOS the device would need to change i.e /dev/vda
 
 Once the vm’s are running with the relevant ignition files
 
@@ -668,13 +670,16 @@ A typical flow would be (once all the dependencies have been installed)
 ./virt-env-install.sh okd-install install
 ```
 
+**N.B.** If there are any discrepencies or improvements please make note. PR's are most welcome !!!
+
+
 Screenshot of final OKD install 
 
 ![pic](./img/okd-ss.png)
 
 ### Acknowledgement & Links
 
-**my github repo** https://github.com/lmzuccarelli/okd-baremetal-install
+**github repo** https://github.com/lmzuccarelli/okd-baremetal-install
 
 Thanks and acknowledgement to **Ryan Hay**
 
