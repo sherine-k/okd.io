@@ -593,7 +593,11 @@ At this point you can shutdown the bootstrap server
 
 Approve certification signing request
 
+
 ```bash
+# Export the KUBECONFIG environment variable (to gain access to the cluster)
+export KUBECONFIG=$INSTALL_DIR/auth/kubeconfig
+
 # View CSRs
 oc get csr
 # Approve all pending CSRs
