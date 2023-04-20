@@ -116,4 +116,4 @@ OpenShift Commons is open to all community participants: users, operators, enter
 
  ... then OpenShift Commons is the right place for you
 
- [![Ready to join](img/readyToJoin.png){ width=200px }](https://commons.openshift.org/index.html#join){: target=_blank}
+ [![Ready to join](img/readyToJoin.png){ width=200px }](https://commons.openshift.org/join){: target=_blank}
