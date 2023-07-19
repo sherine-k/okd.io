@@ -8,6 +8,12 @@ You are also invited to participate: share your experiences and tips with the co
 
 ## Blogs
 
+### 2023
+
+|Date        | Title |
+|------------|-------|
+| 2023-07-18 | [State of affairs in OKD CI/CD](blog/2023-07-18-State-of-Affairs-in-OKD-CI-CD.md) |
+
 ### 2022
 
 |Date        | Title |
