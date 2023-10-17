@@ -1,8 +1,15 @@
+---
+draft: false 
+date: 2020-08-31
+categories:
+  - Guide
+---
+
 # Implementing an Automated Installation Solution for OKD on vSphere with User Provisioned Infrastructure (UPI)
 
-## Introduction
-
 It’s possible to completely automate the process of installing OpenShift/OKD on vSphere with User Provisioned Infrastructure by chaining together the various functions of OCT via a wrapper script.
+
+<!-- more -->
 
 ## Steps
 

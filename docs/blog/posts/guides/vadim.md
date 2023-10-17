@@ -1,9 +1,17 @@
+---
+draft: false 
+date: 2020-08-31
+categories:
+  - Guide
+---
+
 # Vadim's homelab
 
 <!--- cSpell:ignore Vadim's homelab loadbalancer ceph NVME dnsmasq helpernode autoprovision ostree grafana datasource datasources promtail gitops gitea minio nextcloud navidrome pleroma microblogging wallabag neptr -->
 
-This describes the resources used by OpenShift after performing an installation
-to make it similar to my homelab setup.
+This describes the resources used by OpenShift after performing an installation to make it similar to my homelab setup.
+
+<!-- more -->
 
 ## Compute
 

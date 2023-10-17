@@ -1,6 +1,17 @@
+---
+draft: false 
+date: 2020-08-31
+categories:
+  - Guide
+---
+
 # Create a Single Node OKD (SNO) Cluster with Assisted Installer
 
+<!--- cSpell:ignore Vadim configmap SCOS auths aWQ6cGFzcwo kubeconfig kubeadmin nsenter rootfs ostree kublet kubelet baremetal autoscaler apiserver Alertmanager Thanos packageserver thanos-querier -->
+
 This guide outlines how to run the assisted installer locally then use it to deploy a single node OKD cluster.
+
+<!-- more -->
 
 ## Reference Material
 
@@ -20,7 +31,7 @@ A single Node OKD cluster takes fewer resource than the full cluster deployment,
 - Memory : 16 GB
 - Storage (ideally fast storage, such as SSD) : 120GB
 
-These are the absolut minimum resources needed, depending on the workload(s) you want to run in the cluster you may need additional CPU, memory and storage.
+These are the absolute minimum resources needed, depending on the workload(s) you want to run in the cluster you may need additional CPU, memory and storage.
 
 ### Network
 
@@ -82,11 +93,11 @@ As the OKD cluster boots it will need to communicate with the Assisted Installer
 
 For this example I will use IP **192.168.0.141** for the system running podman and hosting the Assisted Installer.
 
-You need to create the configuration file to run the Assisted Installer in podman.  The base files are available in the assisted installer [git repo](https://github.com/openshift/assisted-service/tree/master/deploy/podman){: target=_blank}, but I have modified them and updated them to offer both FCOS (Fedore Core OS) and SCOS (CentOS Stream Core OS) options.
+You need to create the configuration file to run the Assisted Installer in podman.  The base files are available in the assisted installer [git repo](https://github.com/openshift/assisted-service/tree/master/deploy/podman){: target=_blank}, but I have modified them and updated them to offer both FCOS (Fedora Core OS) and SCOS (CentOS Stream Core OS) options.
 
 Create the file (sno.yaml) - this is the combined file for use with podman machine (will also work with Linux).  You need to change all instances of 192.168.0.141 to the IP address of your system running podman and hosting the Assisted Installer:
 
-```yaml
+```yaml title="sno.yaml"
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -116,10 +127,8 @@ data:
   PUBLIC_CONTAINER_REGISTRIES: 'quay.io'
   SERVICE_BASE_URL: http://192.168.0.141:8090
   STORAGE: filesystem
-  OS_IMAGES: '[{"openshift_version":"4.12","cpu_architecture":"x86_64","url":"https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/37.20221127.3.0/x86_64/fedora-coreos-37.20221127.3.0-live.x86_64.iso","version":"37.20221127.3.0"},
-  {"openshift_version":"4.12-scos","cpu_architecture":"x86_64","url":"https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/37.20221127.3.0/x86_64/fedora-coreos-37.20221127.3.0-live.x86_64.iso","version":"37.20221127.3.0"}]'
-  RELEASE_IMAGES: '[{"openshift_version":"4.12","cpu_architecture":"x86_64","cpu_architectures":["x86_64"],"url":"quay.io/openshift/okd:4.12.0-0.okd-2023-04-01-051724","version":"4.12.0-0.okd-2023-04-01-051724","default":true},
-  {"openshift_version":"4.12-scos","cpu_architecture":"x86_64","cpu_architectures":["x86_64"],"url":"quay.io/okd/scos-release:4.12.0-0.okd-scos-2023-03-23-213604","version":"4.12.0-0.okd-scos-2023-03-23-213604","default":false}]'
+  OS_IMAGES: '[{"openshift_version":"4.12","cpu_architecture":"x86_64","url":"https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/37.20221127.3.0/x86_64/fedora-coreos-37.20221127.3.0-live.x86_64.iso","version":"37.20221127.3.0"},{"openshift_version":"4.12-scos","cpu_architecture":"x86_64","url":"https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/37.20221127.3.0/x86_64/fedora-coreos-37.20221127.3.0-live.x86_64.iso","version":"37.20221127.3.0"}]'
+  RELEASE_IMAGES: '[{"openshift_version":"4.12","cpu_architecture":"x86_64","cpu_architectures":["x86_64"],"url":"quay.io/openshift/okd:4.12.0-0.okd-2023-04-01-051724","version":"4.12.0-0.okd-2023-04-01-051724","default":true},{"openshift_version":"4.12-scos","cpu_architecture":"x86_64","cpu_architectures":["x86_64"],"url":"quay.io/okd/scos-release:4.12.0-0.okd-scos-2023-03-23-213604","version":"4.12.0-0.okd-scos-2023-03-23-213604","default":false}]'
   ENABLE_UPGRADE_AGENT: "false"
 ---
 apiVersion: v1
@@ -161,7 +170,7 @@ spec:
   restartPolicy: Never
 ```
 
-You may want to modify this configuration to add https communication and persistant storage using information in the [Assisted Installer git repo](https://github.com/openshift/assisted-service/tree/master/deploy/podman){: target=_blank}.
+You may want to modify this configuration to add https communication and persistent storage using information in the [Assisted Installer git repo](https://github.com/openshift/assisted-service/tree/master/deploy/podman){: target=_blank}.
 
 ### Run the Assisted Installer
 
@@ -185,7 +194,7 @@ To stop a running Assisted Installer instance run (without the persistence optio
 podman play kube --down sno.yaml
 ```
 
-Once the Assisted installer is runing you can access it on port 8080 (http) on the system hosting podman, [http://192.168.0.141:8080](http://192.168.0.141:8080){: target=_blank} (substitute your IP address) or if accessing from the machine hosting the service [http://localhost:8080](http://localhost:8080){: target=_blank}
+Once the Assisted installer is running you can access it on port 8080 (http) on the system hosting podman, `http://192.168.0.141:8080` (substitute your IP address) or if accessing from the machine hosting the service `http://localhost:8080`
 
 ## Create a cluster
 
@@ -224,18 +233,18 @@ When you have the Assisted Installer running locally you can use it to deploy a 
         All internal storage on the target system will be wiped and used for the cluster
 6. Once the target system has booted from the ISO it will contact the Assisted Installer and then appear on the Assisted Installer **Host discovery** screen.  After the target system appears and the status moves from **Discovering** to **Ready**  On the you can press the next button
 7. On the **Storage** page you can configure the storage to use on the target system.  The default should work, but you may want to modify if your target system contains multiple disks.  Once the storage settings are correct press next
-8. On the **Networking** page you should be able to leave things at the default values.  You may need to wait a short time while the host is initialising ,  When the status changes to **Ready** then press next
+8. On the **Networking** page you should be able to leave things at the default values.  You may need to wait a short time while the host is initializing ,  When the status changes to **Ready** then press next
 9. On the **Review and create** page you may need to wait for the preflight checks to complete.  When they are ready you can press **Install cluster** to start the cluster install.
 
 You should be able to leave the system to complete.  The target system will reboot twice and then the cluster will be installed and configured.  The Assisted installer screen will show the progress.
 
 As the cluster is being installed you will be able to download the kubeconfig file for the cluster.  It is important to download this before stopping the Assisted Installer as by default the Assisted Installer storage does not persist across a shutdown.
 
-Once the cluster setup completes you will see the cluster console access details, uncluding the passwork for the kubeadmin password.  Again, you need to capture this information before stopping the Assisted Installer as the information will be lost if you have not enabled persistence.
+Once the cluster setup completes you will see the cluster console access details, including the password for the kubeadmin account.  Again, you need to capture this information before stopping the Assisted Installer as the information will be lost if you have not enabled persistence.
 
 ## Issues to be resolved
 
-Currently the generated clusters are not installed correctly, so some work needs to be done to correct the setup instructions or find issues with the Assisted Installer or OKD relese files.
+Currently the generated clusters are not installed correctly, so some work needs to be done to correct the setup instructions or find issues with the Assisted Installer or OKD release files.
 
 ### SCOS issue
 
