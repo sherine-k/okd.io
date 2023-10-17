@@ -1,7 +1,15 @@
+---
+draft: false
+date: 2021-03-16
+categories:
+  - Testing
+---
+
 # Save The Date! OKD Testing and Deployment Workshop (March 20) Register Now!
 
 <!--- cSpell:ignore throughs Magiera Rohde Schwarz Charro Gruver BCIT Ramanujam Datto hopin -->
 
+<!-- more -->
 ## The OKD Working Group is hosting a virtual workshop on testing and deploying OKD4
 
 On March 20th, [OKD-Working Group](https://groups.google.com/g/okd-wg) is hosting a [one day event](https://hopin.com/events/okd-testing-and-deployment-workshop) to bring together people from the OKD and related Open Source project communities to collaborate on testing and [documentation of the OKD 4 install and upgrade processes for the various platforms](https://github.com/elmiko/okd-deployment-configuration-guides) that people are deploying OKD 4 on as well to identify any issues with the current documentation for these processes and triage them together.

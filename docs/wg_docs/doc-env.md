@@ -29,13 +29,13 @@ You can create the environment by :
     On Windows and MacOS you need to ensure the Docker or Podman system is running
 
     !!!Info
-        On MacOS you need to ensure the directory you are working in is available within the podman virtual machine. You can specify additional directories to mount when issuing the `podman machine init` command.  An example command to initialise the podman machine on MacOS could be:
+        On MacOS you need to ensure the directory you are working in is available within the podman virtual machine. You can specify additional directories to mount when issuing the `podman machine init` command.  An example command to initialize the podman machine on MacOS could be:
 
         ```shell
         podman machine init --cpus 6 --disk-size 150 -m 8096 --now -v /Users:/Users -v /private:/private -v /var/folders:/var/folders
         ```
 
-        This specifies the CPU, disk and memory resource to give the podman amchine and also the directories to mount into the virtual machine.  This ensures that all user home directories are available within the podman machine.
+        This specifies the CPU, disk and memory resource to give the podman machine and also the directories to mount into the virtual machine.  This ensures that all user home directories are available within the podman machine.
 
     *If you have a node.js environment installed that includes the npm command then you can make use of the run scripts provided in the project to run the docker or podman commands*
 

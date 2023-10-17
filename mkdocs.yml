@@ -33,9 +33,10 @@ theme:
   language: en
   custom_dir: overrides
   features:
+    - content.code.copy
     - content.code.annotate
     # - content.tabs.link
-    - navigation.instant
+    # - -
     - naviagation.sections
     - navigation.tracking
     # - navigation.tabs
@@ -45,10 +46,41 @@ theme:
     - search.highlight
 use_directory_urls: true
 plugins:
-  - search:
-      lang: en
+  - tags
+  - social
+  - blog:
+      archive: true
+      archive_date_format: yyyy
+      archive_url_date_format: yyyy
+      authors: true
+      authors_file: "{blog}/.authors.yml"
+      blog_dir: blog
+      blog_toc: true
+      categories: false
+      categories_allowed:
+        - Build
+        - Community
+        - Testing
+        - Guide
+      categories_name: Categories
+      categories_slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+      post_url_date_format: yyyy/MM/dd
+      post_url_format: "{date}/{slug}"
+      post_slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+      post_slugify_separator: _
+      post_excerpt: optional
+      post_excerpt_max_authors: 2
   - minify:
       minify_html: true
+  - search:
+      pipeline:
+        - stemmer
+        - stopWordFilter
+        - trimmer
 markdown_extensions:
   - attr_list
   - admonition
@@ -74,22 +106,9 @@ nav:
   - Getting Started:
       - Installation: installation.md
       - CRC: crc.md
-      - Guides:
-          - Overview: guides/overview.md
-          - Automated vSphere install: guides/automated-vsphere-upi.md
-          - Prerequites for vSphere UPI: guides/vsphere-prereqs.md
-          - vSphere IPI Deployment: guides/vsphere-ipi.md
-          - Single Node OKD Installation: guides/sno.md
-          - Single Node UPI (the hard way) OKD Installation: guides/upi-sno.md
-          - Vadim's homelab: guides/vadim.md
-          - Sri's homelab: guides/sri.md
-          - Azure IPI Default Deployment: guides/azure-ipi.md
-          - AWS IPI Default Deployment: guides/aws-ipi.md
-          - GCP IPI Default Deployment: guides/gcp-ipi.md
-          - OKD Virtualization: guides/virt-baremetal-upi/index.md
-          - Assisted Installer SNO : guides/sno-assisted-installer.md
   - Documentation: docs.md
-  - Blog: blog.md
+  - Blog: 
+      - blog/index.md
   - Community:
       - OKD Community: community.md
       - Code of Conduct: conduct.md

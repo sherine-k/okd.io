@@ -1,12 +1,17 @@
+---
+draft: false
+date: 2022-10-20
+authors:
+  - dmueller
+---
+
 # OKD at KubeCon + CloudNativeCon North America 2022
 
-<!--- cSpell:ignore Kubecon Magiera ICPSR McCune Westin Hopin Vadim Rutkovsky Zuccarelli Glombek Krejci -->
-
-*by [Diane Mueller](https://github.com/dmueller2001)*
-
-date: 2022-10-20
+<!--- cSpell:ignore dmueller Kubecon Magiera ICPSR McCune Westin Hopin Vadim Rutkovsky Zuccarelli Glombek Krejci -->
 
 Are you heading to Kubecon/NA October 24, 2022 - October 28, 2022 in Detroit at KubeCon + CloudNativeCon North America 2022?
+
+<!-- more -->
 
 If so, here's where you'll find members of the OKD Working Group and Red Hat engineers that working on delivering the latest releases of OKD at Kubecon!
 

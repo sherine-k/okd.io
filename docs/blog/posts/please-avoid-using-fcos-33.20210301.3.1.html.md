@@ -1,11 +1,16 @@
+---
+draft: false
+date: 2021-03-19
+---
+
 # Please avoid using FCOS 33.20210301.3.1 for new OKD installs
 
 <!--- cSpell:ignore Vadim -->
 
-Hi,
-
 Due to several issues ([1] and [2]) fresh installations using FCOS
 33.20210301.3.1 would fail. The fix is coming in Podman 3.1.0.
+
+<!-- more -->
 
 Please use an older stable release - 33.20210217.3.0 - as a starting
 point instead. See download links at

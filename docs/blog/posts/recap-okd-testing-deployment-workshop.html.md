@@ -1,10 +1,17 @@
+---
+draft: false 
+date:  2021-03-22
+---
+
 # Recap OKD Testing and Deployment Workshop - Videos and Additional Resources
 
 <!--- cSpell:ignore Charro Gruver Vadim Rutkovsky Magiera Rohde Schwarz throughs BCIT Ramanujam Datto  -->
 
-## The OKD Working Group held a virtual community-hosted workshop on testing and deploying OKD4 on March 20th
-
 On March 20th, [OKD-Working Group](https://groups.google.com/g/okd-wg) hosted a day-long event to bring together people from the OKD and related Open Source project communities to collaborate on testing and [documentation of the OKD 4 install and upgrade processes for the various platforms](https://github.com/elmiko/okd-deployment-configuration-guides) that people are deploying OKD 4 on as well to identify any issues with the current documentation for these processes and triage them together.
+
+<!-- more -->
+
+## The OKD Working Group held a virtual community-hosted workshop on testing and deploying OKD4 on March 20th
 
 The day started with all attendees together in the ‘main stage’ area for 2 hours where community members gave an short welcome along with the following four presentations:
 

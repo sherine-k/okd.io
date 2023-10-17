@@ -1,8 +1,14 @@
-# An Introduction to Debugging OKD Release Artifacts
+---
+draft: false 
+date: 2022-09-09
+---
 
 <!--- cSpell:ignore Moiseev Cune autoplay OCPBUGS -->
+# An Introduction to debugging OKD release artifacts
 
 _by [Denis Moiseev](https://github.com/lobziik) and [Michael McCune](https://github.com/elmiko)_
+
+<!-- more -->
 
 During the course of installing, operating, and maintaining an OKD cluster it is natural for users to come across strange behaviors and failures that are difficult to understand. As Red Hat engineers working on OpenShift, we have many tools at our disposal to research cluster failures and to report our findings to our colleagues. We would like to share some of our experiences, techniques, and tools with the wider OKD community in the hopes of inspiring others to investigate these areas.
 

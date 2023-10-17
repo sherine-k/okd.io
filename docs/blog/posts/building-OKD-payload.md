@@ -1,8 +1,17 @@
+---
+draft: false
+date: 2022-12-12
+categories:
+  - Build
+---
+
 # Building the OKD payload
 
 <!--- cSpell:ignore SCOS buildconfigs buildconfig Kustomize kustomization baremetal -->
 
 Over the last couple of months, we've been busy building a new OKD release on [CentOS Stream](https://www.centos.org/centos-stream/) [CoreOS](https://en.wikipedia.org/wiki/Container_Linux) (SCOS), and were able to present it for the [OpenShift Commons Detroit 2022](https://www.okd.io/blog/2022-10-20-OKD-at-Kubecon-NA-Detroit/).  
+
+<!-- more -->
 
 While some of us created a Tekton pipeline that could [build SCOS](https://www.youtube.com/watch?v=HcGsvSms--A&list=PLaR6Rq6Z4Iqck7Z0ekuJdsMU1fE6hkd6d&index=2) on a Kind cluster, others were tediously building the OKD payload with Prow, but also creating a [Tekton](https://tekton.dev/) pipeline for building that payload on any OpenShift or OKD cluster.
 

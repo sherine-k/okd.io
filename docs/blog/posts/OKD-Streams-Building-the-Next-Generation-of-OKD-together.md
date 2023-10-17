@@ -1,12 +1,19 @@
-# OKD Streams: Building the Next Generation of OKD together
+---
+draft: false
+date: 2022-10-24
+authors:
+  - dmueller
+---
 
-<!--- cSpell:ignore SCOS productized Thorsten Schwesig Humair Coufal Hild Zuccarelli Sherine Khoury Vadim Rutkovsky Alessandro Stefano Magiera Marrich Glombek Gompa massopen Innes -->
+# OKD Streams - Building the Next Generation of OKD together
 
-*by [Diane Mueller](https://github.com/dmueller2001)*
+<!--- cSpell:ignore dmueller SCOS productized Thorsten Schwesig Humair Coufal Hild Zuccarelli Sherine Khoury Vadim Rutkovsky Alessandro Stefano Magiera Marrich Glombek Gompa massopen Innes -->
 
-date: 2022-10-25
+OKD is the community distribution of Kubernetes that powers Red Hat OpenShift. The OKD community has created reusable Tekton build pipelines on a shared Kubernetes cluster for the OKD build pipelines so that they could manage the build & release processes for OKD in the open.
 
-OKD is the community distribution of Kubernetes that powers Red Hat OpenShift. The OKD community has created reusable Tekton build pipelines on a shared Kubernetes cluster for the OKD build pipelines so that they could manage the build & release processes for OKD in the open. With the [operate-first.cloud](https://www.operate-first.cloud/){target=_blank} hosted at the [massopen.cloud](https://massopen.cloud/){target=_blank}, the OKD community has launched a fully open source release pipeline that the community can participate in to help support and manage the release cycle ourselves. The OKD Community is now able to build and release stable builds of OKD 4.12 on both Fedora CoreOS and the newly introduced CentOS Stream CoreOS. We are calling it OKD Streams.
+<!-- more -->
+
+With the [operate-first.cloud](https://www.operate-first.cloud/){target=_blank} hosted at the [massopen.cloud](https://massopen.cloud/){target=_blank}, the OKD community has launched a fully open source release pipeline that the community can participate in to help support and manage the release cycle ourselves. The OKD Community is now able to build and release stable builds of OKD 4.12 on both Fedora CoreOS and the newly introduced CentOS Stream CoreOS. We are calling it OKD Streams.
 
 ## New Patterns, New CI/CD Pipelines and a new CoreOS
 
