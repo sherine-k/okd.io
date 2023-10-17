@@ -80,6 +80,7 @@ nav:
           - Prerequites for vSphere UPI: guides/vsphere-prereqs.md
           - vSphere IPI Deployment: guides/vsphere-ipi.md
           - Single Node OKD Installation: guides/sno.md
+          - Single Node UPI (the hard way) OKD Installation: guides/upi-sno.md
           - Vadim's homelab: guides/vadim.md
           - Sri's homelab: guides/sri.md
           - Azure IPI Default Deployment: guides/azure-ipi.md

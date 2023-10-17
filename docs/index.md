@@ -6,7 +6,7 @@ title: OKD.io
 <!--- cSpell:ignore roadmap -->
 
 !!! Info "Latest"
-    **Announcing OKD Streams: Building the Next Generation of OKD together** - [see blog for details](blog/2022-10-25-OKD-Streams-Building-the-Next-Generation-of-OKD-together.md)
+    **Help us improve OKD by completing the [2023 OKD user survey](https://docs.google.com/forms/d/e/1FAIpQLScw5Qbt-iMorF4LdqzgwGY84eplmfGVq0xmN-LVrNv16g-2aA/viewform)**
 
 Built around a core of OCI container packaging and Kubernetes container cluster management, OKD is also augmented by application lifecycle management functionality and DevOps tooling. OKD provides a complete open source container application platform.
 
@@ -116,4 +116,4 @@ OpenShift Commons is open to all community participants: users, operators, enter
 
  ... then OpenShift Commons is the right place for you
 
- [![Ready to join](img/readyToJoin.png){ width=200px }](https://commons.openshift.org/index.html#join){: target=_blank}
+ [![Ready to join](img/readyToJoin.png){ width=200px }](https://commons.openshift.org/join){: target=_blank}

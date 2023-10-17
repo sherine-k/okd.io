@@ -157,6 +157,15 @@ This one is very helpful if you want to know if a certain commit has landed in y
 
   ```
 
+## How can I find out the version of a particular package within an OKD release?
+```bash
+# Download and enter the machine-os-content container.
+podman run --rm -ti `oc adm release info quay.io/openshift/okd:4.13.0-0.okd-2023-06-24-145750 --image-for=machine-os-content`
+
+# Query the particular rpm. For example, to get the version of the cri-o package in the release, use the following:
+rpm -qa cri-o
+```
+
 ## How to use the official installation container?
 
 The official installer container is part of every release.

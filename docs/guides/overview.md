@@ -8,6 +8,7 @@ The guides linked below provide some examples of how community members are using
 - [Prerequisites for vSphere UPI](vsphere-prereqs.md)
 - [vSphere Installer Provisioned Infrastructure Deployment](vsphere-ipi.md)
 - [Single Node OKD Installation](sno.md)
+- [Single Node UPI (the hard way) OKD Installation](upi-sno.md)
 - [Vadim's homelab](vadim.md)
 - [Sri's homelab](sri.md)
 - [Azure Installer Provisioned Infrastructure Default Deployment](azure-ipi.md)
