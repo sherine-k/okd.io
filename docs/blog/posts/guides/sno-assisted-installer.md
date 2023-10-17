@@ -1,6 +1,6 @@
 ---
 draft: false 
-date: 2020-08-31
+date: 2023-04-13
 categories:
   - Guide
 ---
@@ -12,6 +12,9 @@ categories:
 This guide outlines how to run the assisted installer locally then use it to deploy a single node OKD cluster.
 
 <!-- more -->
+
+!!!Warning
+    This guide won't produce a working system as there are issues to be resolved
 
 ## Reference Material
 
