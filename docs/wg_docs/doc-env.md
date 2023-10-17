@@ -10,7 +10,7 @@ To work on documentation and be able to view the rendered web site you need to c
 - [Node.js](https://nodejs.org/en/){: target=_blank}
 - [Python 3](https://www.python.org){: target=_blank}
 
-You can create the environment by : 
+You can create the environment by :
 
 - running the tooling within a container runtime, so you don't need to do any local installs
 - if you have an Eclipse Che installation on an OKD cluster then you can make the changes using only a browser, with all the tooling running inside Che on the OKD cluster.
@@ -18,7 +18,24 @@ You can create the environment by :
 
 === "Tooling within a container"
 
-    You can use a container to run MkDocs so no local installation is required, however you do need to have [Docker Desktop](https://www.docker.com/products/docker-desktop){: target=_blank} installed if using Mac OS or Windows.  If running on Linux you can use **Docker** or **Podman**.
+    You can use a container to run MkDocs so no local installation is required.  You need a container runtime on your system.
+    
+    The recommended options are:
+    
+    - If running on Windows or MacOS you can run [Docker Desktop](https://www.docker.com/products/docker-desktop){: target=_blank}
+    - if running on Windows pr MacOS you can run [Podman](https://podman.io/docs/installation){: target=_blank} or [Podman Desktop](https://podman-desktop.io){: target=_blank}
+    - if running on Linux you can run [Podman](https://podman.io/docs/installation){: target=_blank}
+
+    On Windows and MacOS you need to ensure the Docker or Podman system is running
+
+    !!!Info
+        On MacOS you need to ensure the directory you are working in is available within the podman virtual machine. You can specify additional directories to mount when issuing the `podman machine init` command.  An example command to initialise the podman machine on MacOS could be:
+
+        ```shell
+        podman machine init --cpus 6 --disk-size 150 -m 8096 --now -v /Users:/Users -v /private:/private -v /var/folders:/var/folders
+        ```
+
+        This specifies the CPU, disk and memory resource to give the podman amchine and also the directories to mount into the virtual machine.  This ensures that all user home directories are available within the podman machine.
 
     *If you have a node.js environment installed that includes the npm command then you can make use of the run scripts provided in the project to run the docker or podman commands*
 
