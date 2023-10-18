@@ -40,3 +40,34 @@ If you create an issue, please do the following:
     ```
     If not, you can @ mention mburke5678 in a comment.
 - If you have the permissions, add a `kind/documentation` label.
+
+#### Testing changes locally
+
+Before opening a pull request, you might want to inspect your changes locally. To do this you will need to use [podman](https://podman.io) or [docker](https://docker.com). After cloning the openshift-docs repository, run the following command inside the root of the repository:
+
+```
+podman run --rm -it -v `pwd`:/docs:Z quay.io/openshift-cs/asciibinder asciibinder build --distro openshift-origin
+```
+_Note: substitute `docker` for `podman` if you are using docker instead_
+
+If this process succeeds, you will find the rendered output files in `./_preview/openshift-origin/latest/`. To view the landing page for the documentation version built, open `./_preview/openshift-origin/latest/welcome/index.html` in your browser.
+
+There are 2 caveats to be aware of when building the site locally:
+
+1. you will most likely see some error output that looks like this: 
+  ```
+  WARN: The following branches do not exist in your local git repo:
+  - enterprise-3.10
+  - enterprise-3.11
+  - enterprise-3.6
+  - enterprise-3.7
+  - enterprise-3.9
+  - enterprise-4.11
+  - enterprise-4.6
+  - enterprise-4.7
+  The build will proceed but these branches will not be generated.
+  WARN: The /docs/_topic_map.yml20230919-1-628e1m file on branch 'OSDOCS-7251-Azure-CPMS-mutli-subnet' references 215 nonexistent topics. Set logging to 'debug' for details.
+  WARN: Branch OSDOCS-7251-Azure-CPMS-mutli-subnet includes 6073 files that are not referenced in the /docs/_topic_map.yml20230919-1-bhydnn file. Set logging to 'debug' for details.
+  ```
+  This is a normal type of warning produced by the build process and doesn't necessarily need investigating.
+2. The root index file will be `./index-community.html`, but this file does not link properly to the content in `./_preview` directory. if you want to see the main page for the version, the file is `./_preview/openshift-origin/latest/welcome/index.html`.
