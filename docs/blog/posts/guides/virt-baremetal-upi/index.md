@@ -1,6 +1,17 @@
+---
+draft: false 
+date: 2020-08-31
+categories:
+  - Guide
+---
+
 # OKD Virtualization on user provided infrastructure
 
 <!--- cSpell:ignore baremetal rpcbind openvswitch kube Virt Hyperconverged hostpath machineconfig kubevirt -->
+
+This guide shows how to set up OKD Virtualization
+
+<!-- more -->
 
 ## Preparing the hardware
 
@@ -9,13 +20,11 @@ As a first step for providing an infrastructure for OKD Virtualization, you need
 * check that the [minimum hardware requirements for running OKD](https://docs.okd.io/latest/installing/installing_bare_metal/installing-bare-metal.html#minimum-resource-requirements_installing-bare-metal) are satisfied
 * check that the [additional hardware requirements for running OKD Virtualization](https://docs.okd.io/latest/virt/install/preparing-cluster-for-virt.html#virt-cluster-resource-requirements_preparing-cluster-for-virt) are also satisfied.
 
-
 ## Preparing the infrastructure
 
 Once your hardware is ready and connected to the network you need to configure your services, your network and your DNS for allowing the OKD installer to deploy the software.
 You may also need to prepare in advance a few services you'll need during the deployment.
 Carefully read the [Preparing the user-provisioned infrastructure](https://docs.okd.io/latest/installing/installing_bare_metal/installing-bare-metal.html#installation-infrastructure-user-infra_installing-bare-metal) section and ensure all the requirements are met.
-
 
 ## Provision your hosts
 

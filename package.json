@@ -19,12 +19,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/binnes/okd-io.git"
+        "url": "git+https://github.com/okd-project/okd.io.git"
     },
     "keywords": [],
     "author": "Brian Innes",
     "license": "ISC",
     "devDependencies": {
-        "cspell": "^6.31.1"
+        "cspell": "^7.3.8"
     }
 }

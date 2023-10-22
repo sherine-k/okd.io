@@ -1,8 +1,17 @@
+---
+draft: false 
+date: 2020-08-31
+categories:
+  - Guide
+---
+
 # Prerequisites for vSphere UPI
 
 <!--- cSpell:ignore homelab dhcpd dhcpcd ddns rndc domainname arpa resolv dnsutils dnssec nxdomain CNAME ECDH AESGCM sslv httplog tcplog dontlognull errorfile maxconn uncommented  -->
 
 In this example I describe the setup of a DNS/DHCP server and a Load Balancer on a Raspberry PI microcomputer. The instructions most certainly will also work for other environments.
+
+<!-- more -->
 
 I use Raspberry Pi OS (debian based).
 

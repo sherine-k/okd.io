@@ -1,6 +1,15 @@
+---
+draft: false 
+date: 2020-08-31
+categories:
+  - Guide
+---
+
 # vSphere IPI Deployment
 
 This describes the resources used by OpenShift after performing an installation using the required options for the installer.
+
+<!-- more -->
 
 ## Infrastructure
 

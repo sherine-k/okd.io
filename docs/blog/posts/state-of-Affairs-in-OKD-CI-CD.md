@@ -1,16 +1,25 @@
+---
+draft: false 
+date: 2023-07-18
+categories:
+  - Build
+authors:
+  - jmeng
+---
+
 # State of affairs in OKD CI/CD
 
-*by [Jakob Meng](https://github.com/jm1)*
-
-date: 2023-07-18
+<!--- cSpell:ignore jmeng SCOS scos -->
 
 [OKD](https://www.okd.io/) is a community distribution of Kubernetes which is built from Red Hat OpenShift components on
 top of Fedora CoreOS (FCOS) and recently also CentOS Stream CoreOS (SCOS). The OKD variant based on Fedora CoreOS is
 called [OKD or OKD/FCOS](https://github.com/okd-project/okd). The SCOS variant is often referred to as [OKD/SCOS](
 https://github.com/okd-project/okd-scos/).
 
-The previous blog posts introduced [OKD Streams](2022-10-25-OKD-Streams-Building-the-Next-Generation-of-OKD-together.md)
-and [its new Tekton pipelines](2022-12-12-Building-OKD-payload.md) for building OKD/FCOS and OKD/SCOS releases. This
+<!-- more -->
+
+The previous blog posts introduced [OKD Streams](OKD-Streams-Building-the-Next-Generation-of-OKD-together.md)
+and [its new Tekton pipelines](building-OKD-payload.md) for building OKD/FCOS and OKD/SCOS releases. This
 blog post gives an overview of the current build and release processes for FCOS, SCOS and OKD. It outlines OKD's
 dependency on OpenShift, an remnant from the past when its Origin predecessor was a downstream rebuild of OpenShift 3,
 and concludes with an outlook on how OKD Streams will help users, developers and partners to experiment with future
@@ -94,7 +103,6 @@ https://github.com/okd-project/okd-coreos-pipeline/)), to build OKD/SCOS (with [
 https://github.com/okd-project/okd-payload-pipeline)) and to build operators (with [okd-operator-pipeline](
 https://github.com/okd-project/okd-operator-pipeline)). [The OKD Streams pipelines have been created to improve the
 RHEL9 readiness signal for Red Hat OpenShift. It allows developers to build and compose different tasks and pipelines to
-easily experiment with OpenShift and related technologies](
-https://www.okd.io/blog/2022-10-25-OKD-Streams-Building-the-Next-Generation-of-OKD-together/). Both
+easily experiment with OpenShift and related technologies](OKD-Streams-Building-the-Next-Generation-of-OKD-together.md). Both
 `okd-coreos-pipeline` and `okd-operator-pipeline` are already used in OKD's CI/CD and in the future
 `okd-payload-pipeline` might supersede OCP CI for building OKD payload components and mirroring OCP payload components.

@@ -1,8 +1,17 @@
+---
+draft: false 
+date: 2020-08-31
+categories:
+  - Guide
+---
+
 # Single Node OKD Installation
 
 <!--- cSpell:ignore wildcard virt libguestfs epel devel -->
 
 This document outlines how to deploy a single node OKD cluster using virt.
+
+<!-- more -->
 
 ## Requirements
 

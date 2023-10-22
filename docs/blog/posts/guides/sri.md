@@ -1,8 +1,17 @@
+---
+draft: false 
+date: 2020-08-31
+categories:
+  - Guide
+---
+
 # Sri's Overkill Homelab Setup
 
 <!--- cSpell:ignore Homelab Ryzen NVME baremetal helpernode ceph alertmanager grafana datacenter bitwarden jellyfin netbox quassel templating  -->
 
 This document lays out the resources used to create my completely-overkill homelab. This cluster provides all the compute and storage I think I'll need for the foreseeable future, and the CPU, RAM, and storage can all be scaled vertically independently of each other. Not that I think I'll need to do that for a while.
+
+<!-- more -->
 
 More detail into the deployment and my homelab's Terraform configuration can be found [here](https://github.com/SriRamanujam/okd-deployment){: target=_blank}.
 

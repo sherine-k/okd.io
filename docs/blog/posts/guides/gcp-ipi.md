@@ -1,8 +1,17 @@
+---
+draft: false 
+date: 2020-08-31
+categories:
+  - Guide
+---
+
 # GCP IPI Default Deployment
 
 <!--- cSpell:ignore subnetworks -->
 
 This describes the resources used by OpenShift after performing an installation using the default options for the installer.
+
+<!-- more -->
 
 ## Infrastructure
 

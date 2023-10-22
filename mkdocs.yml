@@ -13,6 +13,23 @@ theme:
   logo: img/okd_logo_resized.svg
   favicon: img/okdLogo.png
   palette:
+
+    # Palette toggle for light mode
+#    - media: "(prefers-color-scheme: light)"
+#      scheme: default
+#      toggle:
+#        icon: material/brightness-7
+#        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+#    - media: "(prefers-color-scheme: dark)"
+#      scheme: slate
+#      toggle:
+#        icon: material/brightness-4
+#        name: Switch to light mode
+#
+#-----------------------------
+#
     - media: "(prefers-color-scheme: light)"
       scheme: okd
       toggle:
@@ -33,9 +50,10 @@ theme:
   language: en
   custom_dir: overrides
   features:
+    - content.code.copy
     - content.code.annotate
     # - content.tabs.link
-    - navigation.instant
+    # - -
     - naviagation.sections
     - navigation.tracking
     # - navigation.tabs
@@ -45,12 +63,46 @@ theme:
     - search.highlight
 use_directory_urls: true
 plugins:
-  - search:
-      lang: en
+  - tags
+  - social
+  - blog:
+      archive: true
+      archive_date_format: yyyy
+      archive_url_date_format: yyyy
+      authors: true
+      authors_file: "{blog}/.authors.yml"
+      blog_dir: blog
+      blog_toc: true
+      categories: false
+      categories_allowed:
+        - Build
+        - Community
+        - Testing
+        - Guide
+      categories_name: Categories
+      categories_slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+      post_url_date_format: yyyy/MM/dd
+      post_url_format: "{date}/{slug}"
+      post_slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+      post_slugify_separator: _
+      post_excerpt: optional
+      post_excerpt_max_authors: 2
   - minify:
       minify_html: true
+  - search:
+      pipeline:
+        - stemmer
+        - stopWordFilter
+        - trimmer
 markdown_extensions:
   - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - admonition
   - toc:
       permalink: true
@@ -61,7 +113,8 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight
-  - pymdownx.tabbed
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.details
 extra_css:
   - css/extra.css
@@ -74,21 +127,9 @@ nav:
   - Getting Started:
       - Installation: installation.md
       - CRC: crc.md
-      - Guides:
-          - Overview: guides/overview.md
-          - Automated vSphere install: guides/automated-vsphere-upi.md
-          - Prerequites for vSphere UPI: guides/vsphere-prereqs.md
-          - vSphere IPI Deployment: guides/vsphere-ipi.md
-          - Single Node OKD Installation: guides/sno.md
-          - Single Node UPI (the hard way) OKD Installation: guides/upi-sno.md
-          - Vadim's homelab: guides/vadim.md
-          - Sri's homelab: guides/sri.md
-          - Azure IPI Default Deployment: guides/azure-ipi.md
-          - AWS IPI Default Deployment: guides/aws-ipi.md
-          - GCP IPI Default Deployment: guides/gcp-ipi.md
-          - OKD Virtualization: guides/virt-baremetal-upi/index.md
   - Documentation: docs.md
-  - Blog: blog.md
+  - Blog: 
+      - blog/index.md
   - Community:
       - OKD Community: community.md
       - Code of Conduct: conduct.md

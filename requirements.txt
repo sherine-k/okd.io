@@ -1,5 +1,5 @@
 # Do not use with Docker builds, only for local dev with mkdocs CLI
-mkdocs==1.4.2
-mkdocs-material==9.1.6
-mkdocs-minify-plugin==0.6.4
-git+https://github.com/linkchecker/linkchecker@v10.1.0#egg=linkchecker
+mkdocs==1.5.3
+mkdocs-material==9.4.6
+mkdocs-minify-plugin==0.7.1
+git+https://github.com/linkchecker/linkchecker@v10.3.0#egg=linkchecker

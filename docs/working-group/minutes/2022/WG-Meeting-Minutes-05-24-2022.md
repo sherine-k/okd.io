@@ -18,8 +18,8 @@
 * OKD Release updates (Christian)
     * Question: Operator count? There was a change, we don't know the details
 * FCOS updates (Timothée)
-    * [Ignition config accessible to unprivileged software on VMware](https://lists.fedoraproject.org/archives/list/coreos-status@lists.fedoraproject.org/thread/M3EQHFIF2XXTZRVDDWHBZW3OHIHHP2GC/)
-    * [Format change for Nutanix artifact](https://lists.fedoraproject.org/archives/list/coreos-status@lists.fedoraproject.org/thread/SZAD4FBCJFHDV3SSOLOXR4RUXRWGJN56/)
+    * [Ignition config accessible to unprivileged software on VMware](https://github.com/advisories/GHSA-hj57-j5cw-2mwp)
+    * [Format change for Nutanix artifact](https://discussion.fedoraproject.org/t/format-change-for-nutanix-artifact/39274)
     * [coreos autoinstall creates huge number of xfs allocation groups](https://github.com/coreos/fedora-coreos-tracker/issues/1183)
         *  https://docs.okd.io/latest/installing/installing_bare_metal/installing-bare-metal.html#installation-user-infra-machines-advanced_disk_installing-bare-metal
 * Docs updates (Brian, Jaime)

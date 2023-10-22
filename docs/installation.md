@@ -15,8 +15,6 @@ OKD support installation on bare metal hardware, a number of virtualization plat
 
 If you want to install on a typical developer workstation, then [Code-Ready Containers](crc.md) may be a better options, as that is a cut-down installation designed to run on limited compute and memory resources.
 
-You can find examples of OKD installations, setup by OKD community members in the [guides](guides/overview.md) section.
-
 ## Getting Started
 
 To obtain the openshift installer and client, visit [releases](https://github.com/okd-project/okd/releases){: target=_blank} for stable versions or [https://amd64.origin.releases.ci.openshift.org/](https://amd64.origin.releases.ci.openshift.org/){: target=_blank} for nightlies.
